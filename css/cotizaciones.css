@@ -1,0 +1,234 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* estilos del body */
+body {
+    background-color: whitesmoke;
+    font-family: monospace,cursive;
+    padding: 2rem;
+}
+/* GRID del Header */
+.contenedor{
+    display:grid;
+}
+header{
+        display: grid;
+        grid-template-columns: 50% 50% ;/* 2 columnas */
+        grid-template-areas:  
+            "izquierda derecha";
+        align-items: center; /* Alinear el codigo en la cada*/
+     }
+
+header .menuIzquierda{
+        grid-area: izquierda;
+    }
+
+header .menuDerecha{
+        grid-area: derecha;
+    }
+
+/* estilo  del header  */
+
+.menuIzquierda{
+    display:flex;
+    align-items: center;
+    gap: 1rem;
+    height: 60px;
+    list-style: none;
+    justify-items: center;
+    text-decoration: black;
+    padding-left: 250px;
+}
+
+.menuDerecha{
+    display:flex;
+    list-style: none;
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+    color: white;
+}
+
+.acceder{
+    /* formato del boton*/
+    color: whitesmoke;
+    border:2px solid #5593f7; /*anchura, estilo y color borde*/
+    padding: 5px; /*espacio alrededor texto*/
+    padding-left: 25px;
+    padding-top: 8px;
+    padding-bottom: 2px;
+    padding-right: 25px;
+    font-size: 16px;
+    background-color: #0062ff; /*color botón*/
+    color: whitesmoke; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform:initial; /*capitalización texto*/
+    font-family: monospace,cursive; /*tipografía texto*/
+    border-radius: 15px ; /*bordes redondos*/
+
+}
+
+.registrar{
+    /* formato del boton*/
+    color: blue;
+    border: 2px  #010101; /*anchura, estilo y color borde*/
+    padding: 10px; /*espacio alrededor texto*/
+    background-color: whitesmoke; /*color botón*/
+    color: whitesmoke; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform: initial; /*capitalización texto*/
+    font-family: monospace,cursive; /*tipografía texto*/
+
+}
+
+/* GRID del Menu */
+
+main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 10% 20% 20% ;
+    grid-template-areas:  
+    "h1 img"
+    "logo img"
+    "slogan img"
+    "texto img"
+    "comenza img"
+    "footer footer";
+ }
+
+main .tituloPrincipal{
+    grid-area:h1;
+}
+
+main .comenza{
+    grid-area:comenza;
+}
+
+main .imagenMonedas{
+    grid-area:logo;
+}
+
+main .sloganMarca{
+    grid-area:slogan;
+}
+
+main .textoHome{
+    grid-area:texto;
+}
+
+main .imagenWallet{
+    grid-area:img;
+}
+
+footer .footerDerecho {
+    grid-area: footer;
+}
+
+/* estilo de menu diseño */
+
+.tituloPrincipal{
+    font-size:x-large;
+}
+
+.imagenMonedas{
+    height: 13rem;
+    background-color: transparent;
+    padding-left: 210px;
+}
+
+.tituloPrincipal{
+   text-align: left;
+   padding-top: 120px;
+   padding-left: 250px;
+}
+
+.imagenWallet{
+    padding-left: 40px;
+}
+
+.sloganMarca{
+    padding-left: 250px;
+    padding-top: 125px;
+}
+
+.textoHome{
+    padding-left: 250px;
+    padding-top: 40px;
+}
+
+.footerDerecho{
+    text-align: center;
+}
+
+.comenza{
+    position: relative;
+    left: 250px;
+    width: fit-content;
+    color: whitesmoke;
+    border: 2px solid #5593f7; /*anchura, estilo y color borde*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 16px;
+    background: #0062ff; /*color botón*/
+    color: whitesmoke; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform:initial; /*capitalización texto*/
+    font-family: monospace,cursive; /*tipografía texto*/
+    border-radius: 15px ; /*bordes redondos*/
+    text-align: center;
+}
+
+/* CSS COTIZACIONES*/
+
+
+.imgBitcoin{
+    height: 30rem;
+    background-color: transparent;
+    padding-left: 210px;
+
+}
+
+.contenedorCotizaciones{
+    display: grid;
+    grid-template-areas: 
+    "img precio"
+    "footer footer"
+    ;
+}
+
+
+main .imgBitcoin{
+    grid-area:img;
+}
+
+main .Precio{
+    grid-area:precio;
+}
+
+footer {
+    grid-area:footer;
+}
+
+footer{
+    text-align: center;
+}
+
+.imgBitcoin{
+    margin-top: 40px;
+}
+
+footer{
+    margin-top: 30px;;
+}
+
+.Precio{
+    justify-content: right;
+    margin-top: 150px;
+    margin-left: 80px;
+}
