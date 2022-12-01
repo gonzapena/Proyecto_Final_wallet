@@ -10,6 +10,7 @@ body {
   font-family: monospace,cursive;
   padding: 2rem; }
 
+/* CSS Menu */
 header {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -170,6 +171,7 @@ main {
     padding-top: 20px;
     text-align: center; } }
 
+/* CSS COTIZACIONES */
 main .contenedorCotizaciones {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -222,6 +224,7 @@ footer .footerCotizaciones {
   text-align: center;
   margin-top: 30px; }
 
+/* CSS wallet */
 main .mainWallet {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -263,6 +266,7 @@ header .navbar-nav.navbar-center {
   left: 10%;
   transform: translatex(20%); }
 
+/* CSS acceder */
 main .contenedoMain {
   display: grid;
   grid-template-columns: 60% 30%;
@@ -328,6 +332,7 @@ main .contenedoMain {
       color: white;
       text-decoration: none; } }
 
+/* CSS registrate */
 main .contenedorRegistracion {
   display: grid;
   grid-template-columns: auto;
