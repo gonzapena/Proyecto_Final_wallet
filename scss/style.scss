@@ -1,124 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    
-    @extend %reset;
+* { @extend %reset;
 }
 
 @import "utilidades/variables";
 @import "utilidades/mixin";
 @import "utilidades/mapas";
 @import "utilidades/extend";
-@import "utilidades/condicionales";
 
 body {
     background-color: whitesmoke;
-    font-family: monospace,cursive;
-    padding: 2rem;
+    font-family: monospace;
+    color: black;
 }
- /* CSS Menu */
+ 
+/* CSS index */
 
-header{
+body .contenedor{
     display: grid;
-    grid-template-columns: 50% 50% ;/* 2 columnas */
-    grid-template-areas:  
-        "izquierda derecha";
-    align-items: center; /* Alinear el codigo en la cada*/
-    .contenedor{
-        display:grid;
-        }
+    height: 100%;
+    grid-template-columns: 10% 50% 30% 10%;
+    grid-template-rows: auto ;
+    grid-template-areas: 
+    " . izquierda derecha . " 
+    " . h1 img . "
+    " . logo img . "
+    " . slogan img . "
+    " . texto img . "
+    " . comenza img . "
+    " . footer footer . ";
     .menuIzquierda{
-        grid-area: izquierda;
+        grid-area:izquierda;
         display:flex;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         height: 60px;
-        list-style: none;
         justify-items: center;
-        text-decoration: black;
         padding-left: 250px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-start: 2;
     }
     .menuDerecha{
-        grid-area: derecha;
+        grid-area:derecha;
         display:flex;
-        list-style: none;
         gap: 1rem;
         justify-content: center;
-        justify-items: center;
-        color: white;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-start: 2;
     }
-    .acceder{
-        /* formato del boton*/
-        color: whitesmoke;
-        border:2px solid #5593f7; /*anchura, estilo y color borde*/
-        padding: 5px; /*espacio alrededor texto*/
-        padding-left: 25px;
-        padding-top: 8px;
-        padding-bottom: 2px;
-        padding-right: 25px;
-        font-size: 16px;
-        background-color: #0062ff; /*color botón*/
-        color: whitesmoke; /*color texto*/
-        text-decoration: none; /*decoración texto*/
-        text-transform:initial; /*capitalización texto*/
-        font-family: monospace,cursive; /*tipografía texto*/
-        border-radius: 15px ; /*bordes redondos*/
-    }
-    .registrar{
-        /* formato del boton*/
-        color: blue;
-        border: 2px  #010101; /*anchura, estilo y color borde*/
-        padding: 10px; /*espacio alrededor texto*/
-        background-color: whitesmoke; /*color botón*/
-        color: whitesmoke; /*color texto*/
-        text-decoration: none; /*decoración texto*/
-        text-transform: initial; /*capitalización texto*/
-        font-family: monospace,cursive; /*tipografía texto*/
-    }
-
-}
- main{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 30% 10% 20% 20% ;
-    grid-template-areas:  
-    "h1 img"
-    "logo img"
-    "slogan img"
-    "texto img"
-    "comenza img"
-    "footer footer";
     .tituloPrincipal{
         grid-area:h1;
-        font-size:x-large;
-        text-align: left;
-        padding-top: 120px;
-        padding-left: 250px;
-    }
-    .comenza{
-        grid-area:comenza;
+        grid-column-start: 2;
+        grid-row-start: 2;
     }
     .imagenMonedas{
         grid-area:logo;
-        height: 13rem;
-        background-color: transparent;
-        padding-left: 210px;
     }
     .sloganMarca{
         grid-area:slogan;
-        padding-left: 250px;
-        padding-top: 125px;
     }
     .textoHome{
         grid-area:texto;
-        padding-left: 250px;
-        padding-top: 40px;
     }
     .imagenWallet{
         grid-area:img;
-        padding-left: 40px;
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end:   4;
     }
     .footerDerecho {
         grid-area: footer;
@@ -126,6 +77,7 @@ header{
     }
     .comenza{
         position: relative;
+        grid-area:comenza;
         left: 250px;
         width: fit-content;
         color: whitesmoke;
@@ -143,9 +95,46 @@ header{
         border-radius: 15px ; /*bordes redondos*/
         text-align: center;
     }
- }
+    .acceder{
+        /* formato del boton*/
+        border:2px solid #5593f7; /*anchura, estilo y color borde*/
+        padding: 5px; /*espacio alrededor texto*/
+        padding-left: 25px;
+        padding-top: 8px;
+        padding-bottom: 2px;
+        padding-right: 25px;
+        font-size: 16px;
+        background-color: #0062ff; /*color botón*/
+        color: whitesmoke; /*color texto*/
+        text-transform:initial; /*capitalización texto*/
+        border-radius: 15px ; /*bordes redondos*/
+    }
+    .registrar{
+        /* formato del boton*/
+        color: blue;
+        border: 2px  #010101; /*anchura, estilo y color borde*/
+        padding: 10px; /*espacio alrededor texto*/
+        background-color: whitesmoke; /*color botón*/
+        color: whitesmoke; /*color texto*/
+        text-decoration: none; /*decoración texto*/
+        text-transform: initial; /*capitalización texto*/
+        font-family: monospace,cursive; /*tipografía texto*/
+    }
+}
 
- @media screen and (max-width: 1200px) {
+/*footer {
+	background-color: $color-fondo;
+	height: 100%;
+    color: $color-letra-menu;
+    padding: 20px;
+    display:flex;
+    margin:0 auto;
+    img:hover {
+        color: #fff;
+    }
+}
+
+/* @media screen and (max-width: 1200px) {
     
     body{
         margin:20px;
@@ -188,7 +177,7 @@ header{
         padding-top: 20px;
          text-align: center;
      }
-    }
+    } 
 
     /* CSS COTIZACIONES */
 
@@ -264,6 +253,7 @@ header{
         text-align: center;
         margin-top: 30px;;
     }
+
  /* CSS wallet */
  main .mainWallet{
             display: grid;
@@ -324,96 +314,27 @@ header{
         
  /* CSS acceder */
         
-main .contenedoMain{
+        main .contenedoMain{
             display: grid;
-            grid-template-columns: 60% 30%;
-            grid-template-rows: 5% 10% 5% ;
+            height: 100%;
             grid-template-areas:  
-            "h1 img"
-            "form img"
+            "h1     img"
+            "form   img"
             "footer img";
             .inicia{
-                grid-area:h1;
-                text-align:center;
-                padding-top: 50px;
+                grid-area: h1; 
             }
             .signupFrmAcceder{
                 grid-area:form;
-                align-items:flex-start;
-                padding: 100px
             }
             .imagenAcceder{
                 grid-area:img;
-                width: 600px;
-                height: 700px;
-                align-items: flex-end;
             }
             .footerDerecho {
                 grid-area: footer;
-                text-align: center;
-                padding-top: 20px;
             }
          }
 
-         @media (max-width: 575.98px)and (orientation:portrait) {
-            
-            main .contenedoMain{
-                margin:10px;
-                padding: 30px;
-                text-decoration: none;
-                .menuIzquierda{
-                    display: none;
-                }
-                .inicia{
-                    display: block;
-                }
-                .imagenAcceder{
-                    display:none;
-                }
-                .contenedoMain{
-                    padding-top: 10px;
-                }
-                .signupFrmAcceder{
-                    padding:0;
-                    display: block;;
-                    justify-content: center;
-                }
-                .acceder{
-                    color:white;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        @media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
-    
-            main .contenedoMain{
-                margin:10px;
-                padding: 30px;
-                text-decoration: none;
-                .menuIzquierda{
-                    display: none;
-                }
-                .inicia{
-                    display: block
-                }
-                .imagenAcceder{
-                    display:none;
-                }
-                .contenedoMain{
-                    padding-top: 10px;
-                }
-                .signupFrmAcceder{
-                    padding:0;
-                    display: block;;
-                    justify-content: center;
-                }
-                .acceder{
-                    color:white;
-                    text-decoration: none;
-                }
-        }
-    }
     
  /* CSS registrate */
 
