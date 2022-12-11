@@ -1,4 +1,10 @@
-* { @extend %reset;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+    @extend %reset;
 }
 
 @import "utilidades/variables";
@@ -8,77 +14,148 @@
 
 body {
     background-color: whitesmoke;
-    font-family: monospace;
-    color: black;
+    font-family: monospace,cursive;
+    padding: 2rem;
 }
- 
-/* CSS index */
+ /* CSS Menu */
 
-body .contenedor{
+ div .contenedor{
     display: grid;
-    height: 100%;
-    grid-template-columns: 10% 50% 30% 10%;
-    grid-template-rows: auto ;
-    grid-template-areas: 
-    " . izquierda derecha . " 
-    " . h1 img . "
-    " . logo img . "
-    " . slogan img . "
-    " . texto img . "
-    " . comenza img . "
-    " . footer footer . ";
+    grid-template-columns:20% 30% 30% 20%; 
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas:  
+        " . header header . "
+        " . main main . "
+        " . footer footer . ";
+    header .headerIndex{
+        grid-area: header
+    }
+    main .mainIndex{
+        grid-area: main
+    }   
+    footer .footerDerecho{
+        grid-area: footer
+    }    
+ }
+
+header{
+    display: grid;
+    grid-template-columns: 50% 50% ;/* 2 columnas */
+    grid-template-areas:  
+        "izquierda derecha";
+    align-items: center; /* Alinear el codigo en la cada*/
     .menuIzquierda{
-        grid-area:izquierda;
+        grid-area: izquierda;
         display:flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
         height: 60px;
         justify-items: center;
+        text-decoration: black;
         padding-left: 250px;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-start: 2;
     }
     .menuDerecha{
-        grid-area:derecha;
+        grid-area: derecha;
         display:flex;
+        list-style: none;
         gap: 1rem;
         justify-content: center;
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row-start: 1;
-        grid-row-start: 2;
+        justify-items: center;
+        color: white;
     }
+    .acceder{
+        /* formato del boton*/
+        color: whitesmoke;
+        border:2px solid #5593f7; /*anchura, estilo y color borde*/
+        padding: 5px; /*espacio alrededor texto*/
+        padding-left: 25px;
+        padding-top: 8px;
+        padding-bottom: 2px;
+        padding-right: 25px;
+        font-size: 16px;
+        background-color: #0062ff; /*color botón*/
+        color: whitesmoke; /*color texto*/
+        text-decoration: none; /*decoración texto*/
+        text-transform:initial; /*capitalización texto*/
+        font-family: monospace,cursive; /*tipografía texto*/
+        border-radius: 15px ; /*bordes redondos*/
+    }
+    .registrar{
+        /* formato del boton*/
+        color: blue;
+        border: 2px  #010101; /*anchura, estilo y color borde*/
+        padding: 10px; /*espacio alrededor texto*/
+        background-color: whitesmoke; /*color botón*/
+        color: whitesmoke; /*color texto*/
+        text-decoration: none; /*decoración texto*/
+        text-transform: initial; /*capitalización texto*/
+        font-family: monospace,cursive; /*tipografía texto*/
+    }
+
+}
+
+    .mainIndex{
+    display: grid;
+    grid-template-columns: 15% 40% 30%;
+    grid-template-rows: 30% 30% 10% 15% 10%;
+    grid-template-areas:  
+    "h1 img"
+    "logo img"
+    "slogan img"
+    "texto img"
+    "comenza img";
     .tituloPrincipal{
         grid-area:h1;
-        grid-column-start: 2;
-        grid-row-start: 2;
+        font-size:x-large;
+        grid-column-start:2;
+        grid-column-end: 3;
+        grid-row-start:1;
+        grid-row-end: 2;
+        justify-content: left;
+        padding-top: 50px;
     }
     .imagenMonedas{
         grid-area:logo;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:2;
+        grid-row-end:3;
+        img{
+        width: 25rem;
+        height: auto;
+        align-items: left;
+        }
     }
     .sloganMarca{
         grid-area:slogan;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:3;
+        grid-row-end:4;
     }
     .textoHome{
         grid-area:texto;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:4;
+        grid-row-end:5;
     }
     .imagenWallet{
         grid-area:img;
-        grid-column-start: 3;
+        grid-column-start:3;
         grid-column-end: 4;
-        grid-row-start: 2;
-        grid-row-end:   4;
-    }
-    .footerDerecho {
-        grid-area: footer;
-        text-align: center;
+        grid-row-start:1;
+        grid-row-end:6;
+        align-content: center;       
     }
     .comenza{
-        position: relative;
         grid-area:comenza;
-        left: 250px;
+        grid-column-start:2;
+        grid-column-end: 3;
+        grid-row-start:5;
+        grid-row-end:6;
+        h4 { 
+        position:relative;
         width: fit-content;
         color: whitesmoke;
         border: 2px solid #5593f7; /*anchura, estilo y color borde*/
@@ -93,312 +170,71 @@ body .contenedor{
         text-transform:initial; /*capitalización texto*/
         font-family: monospace,cursive; /*tipografía texto*/
         border-radius: 15px ; /*bordes redondos*/
-        text-align: center;
-    }
-    .acceder{
-        /* formato del boton*/
-        border:2px solid #5593f7; /*anchura, estilo y color borde*/
-        padding: 5px; /*espacio alrededor texto*/
-        padding-left: 25px;
-        padding-top: 8px;
-        padding-bottom: 2px;
-        padding-right: 25px;
-        font-size: 16px;
-        background-color: #0062ff; /*color botón*/
-        color: whitesmoke; /*color texto*/
-        text-transform:initial; /*capitalización texto*/
-        border-radius: 15px ; /*bordes redondos*/
-    }
-    .registrar{
-        /* formato del boton*/
-        color: blue;
-        border: 2px  #010101; /*anchura, estilo y color borde*/
-        padding: 10px; /*espacio alrededor texto*/
-        background-color: whitesmoke; /*color botón*/
-        color: whitesmoke; /*color texto*/
-        text-decoration: none; /*decoración texto*/
-        text-transform: initial; /*capitalización texto*/
-        font-family: monospace,cursive; /*tipografía texto*/
-    }
-}
-
-/*footer {
-	background-color: $color-fondo;
-	height: 100%;
-    color: $color-letra-menu;
-    padding: 20px;
-    display:flex;
-    margin:0 auto;
-    img:hover {
-        color: #fff;
-    }
-}
-
-/* @media screen and (max-width: 1200px) {
-    
-    body{
-        margin:20px;
-    }
-    .menuIzquierda{
-        display: none;
-    }
-    .contenedor_2{
-        display:flex;
-        flex-direction: column;
-    }
-    .imagenWallet{
-        display:none
-    }
-    .tituloPrincipal{
-        padding-top: 50px;
-        padding-left: 20px;
-        text-align: left;
-        height: 50px;
-        font-size: large;
-     }
-     .imagenWallet{
-         padding-left: 40px;
-         display:none;
-     }
-     .sloganMarca{
-         padding-left: 250px;
-         padding-top: 125px;
-         display: none;
-     }
-     .imagenMonedas{
-        display:none;
-     }
-     .textoHome{
-         padding-left: 20px;
-         padding-top: 150px;
-         padding-bottom: 50px;
-     }
-     .footerDerecho{
-        padding-top: 20px;
-         text-align: center;
-     }
-    } 
-
-    /* CSS COTIZACIONES */
-
-    main .contenedorCotizaciones{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 30% 10% 20% 20% ;
-        grid-template-areas:  
-        "h1 img"
-        "logo img"
-        "slogan img"
-        "texto img"
-        "comenza img"
-        "footer footer";
-        .tituloPrincipal{
-            grid-area:h1;
-            font-size:x-large;
-            text-align: left;
-            padding-top: 120px;
-            padding-left: 250px;
-        }
-        .comenza{
-            grid-area:comenza;
-        }
-        .imagenMonedas{
-            grid-area:logo;
-            height: 13rem;
-            background-color: transparent;
-            padding-left: 210px;
-        }
-        .sloganMarca{
-            grid-area:slogan;
-            padding-left: 250px;
-            padding-top: 125px;
-        }
-        .textoHome{
-            grid-area:texto;
-            padding-left: 250px;
-            padding-top: 40px;
-        }
-        .imagenWallet{
-            grid-area:img;
-            padding-left: 40px;
-        }
-        .footerDerecho {
-            grid-area: footer;
-            text-align: center;
-        }
-        .imgBitcoin{
-            height: 30rem;
-            background-color: transparent;
-            padding-left: 210px;
-            grid-area:img;
-            margin-top: 40px;
-        }
-          .contenedorCotizaciones{
-            display: grid;
-            grid-template-areas: 
-            "img precio"
-            "footer footer"
-            ;
-        }
-        .Precio{
-            grid-area:precio;
-            justify-content: right;
-            margin-top: 150px;
-            margin-left: 80px;
         }
     }
-
-    footer .footerCotizaciones{
-        grid-area:footer;
-        text-align: center;
-        margin-top: 30px;;
     }
-
- /* CSS wallet */
- main .mainWallet{
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 30% 10% 20% 20% ;
-            grid-template-areas:  
-            "h1 img"
-            "logo img"
-            "slogan img"
-            "texto img"
-            "comenza img"
-            "footer footer";
-            .tituloPrincipal{
-                grid-area:h1;
-                font-size:x-large;
-                text-align: left;
-                padding-top: 120px;
-                padding-left: 250px;
-            }
-            .comenza{
-                grid-area:comenza;
-            }
-            .imagenMonedas{
-                grid-area:logo;
-                height: 13rem;
-                background-color: transparent;
-                padding-left: 210px;
-            }
-            .sloganMarca{
-                grid-area:slogan;
-                padding-left: 250px;
-                padding-top: 125px;
-            }
-            .textoHome{
-                grid-area:texto;
-                padding-left: 250px;
-                padding-top: 40px;
-            }
-            .imagenWallet{
-                grid-area:img;
-                padding-left: 40px;
-            }
-            .footerDerecho {
-                grid-area: footer;
-                text-align: center;
-            }
-            .img{
-                height: 30em;
-                background-color: transparent;
-
-            }
-        }
-            header .navbar-nav.navbar-center {
-                position:static;
-                left: 10%;
-                transform: translatex(20%);
-            }
-        
- /* CSS acceder */
-        
-        main .contenedoMain{
-            display: grid;
-            height: 100%;
-            grid-template-areas:  
-            "h1     img"
-            "form   img"
-            "footer img";
-            .inicia{
-                grid-area: h1; 
-            }
-            .signupFrmAcceder{
-                grid-area:form;
-            }
-            .imagenAcceder{
-                grid-area:img;
-            }
-            .footerDerecho {
-                grid-area: footer;
-            }
-         }
-
-    
- /* CSS registrate */
-
-main .contenedorRegistracion{
+ 
+    .footerDerecho{
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-columns: 20% 30% 30% 20%;
     grid-template-areas:  
-    "h1 img"
-    "form img"
-    "footer img";
-    .tituloRegistracion1{
-        grid-area:h1;
-        text-align:center;
-        padding-top: 50px;
+        " . izquierda derecha . ";
+    align-items: center; /* Alinear el codigo en la cada*/
+    .row{
+        grid-area: izquierda;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        justify-items: start;
     }
-    .signupFrm{
-        grid-area:form;
-        align-items:center;
-        padding: 100px;
+    .row_2{
+        grid-area: derecha;
+        grid-column-start: 3;
+        grid-column-end: 4;
     }
-    .imagenRegistrar{
-        grid-area:img;
-        width: 600px;
-        height: 700px;
-        align-items: flex-end;
-    }
-    .footerDerecho {
-        grid-area:footer;
-        text-align:center;
-        padding-top: 20px;
-    }
-}
+ }
 
-@media (max-width: 575.98px)and (orientation:portrait) {
+ //tablet
 
-    main .contenedorRegistracion{
-        margin:10px;
-        padding: 30px;
-        text-decoration: none;
-        .menuIzquierda{
+    /* Tamaño tablet (768-480) */
+    @media all and (min-width: 480px) and (max-width: 992px) {
+
+        
+        header .menuIzquierda {
+                display: none;
+                .menuDerecha{
+                    justify-content: center;
+                }
+        }
+
+        main .imagenWallet img{
             display: none;
-        }
-        .imagenRegistrar{
-            display:none;
-        }
-        .signupFrm{
-            text-align: auto;
+            .tituloPrincipal h1{
+            grid-column-start: 3;
+            grid-column-end: 3;
         }
     }
-}
 
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
+    }
     
-    main .contenedorRegistracion{
-        margin:10px;
-        padding: 30px;
-        text-decoration: none;
-        .menuIzquierda{
-            display: none;
-        }
-        .imagenRegistrar{
-            display:none;
-        }
+    /* Tamaño teléfonos (480-menos ) */
+    @media all and (max-width: 480px) { 
 
-    } 
-}   
+    }
+    
+
+// CSS COTIZACIONES 
+
+main .contenedorCotizaciones{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%  ;
+    grid-template-areas:  
+    "img Precio"
+    "img Precio";
+    .imgBitcoin{
+        grid-area:img;
+    }
+    .Precio{
+        grid-area:Precio;
+    }
+} 
