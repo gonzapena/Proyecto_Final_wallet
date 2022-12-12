@@ -251,6 +251,100 @@ header {
     grid-area: img;
     grid-column-start: 3; }
     .mainWallet .imgWallet img {
-      padding-top: 100px;
+      padding-top: 130px;
       align-items: right;
       padding-left: 30px; }
+
+.contenedoMain {
+  display: grid;
+  grid-template-columns: 15% 30% 40%;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: " . h1 img"  " . form img"; }
+  .contenedoMain .inicia {
+    grid-area: h1;
+    grid-column-start: 2;
+    grid-row-start: 1; }
+    .contenedoMain .inicia h1 {
+      text-align: center;
+      padding-top: 50px; }
+  .contenedoMain .signupFrmAcceder {
+    grid-area: form;
+    grid-column-start: 2;
+    grid-row-start: 2; }
+    .contenedoMain .signupFrmAcceder form {
+      align-items: flex-start; }
+  .contenedoMain .imagenAcceder {
+    grid-area: img;
+    grid-column-start: 3; }
+    .contenedoMain .imagenAcceder img {
+      width: 700px;
+      height: 600px;
+      padding-left: 50px; }
+
+@media (max-width: 575.98px) and (orientation: portrait) {
+  main .contenedoMain {
+    margin: 10px;
+    padding: 30px;
+    text-decoration: none; }
+  main .contenedoMain .menuIzquierda {
+    display: none; }
+  main .contenedoMain .inicia {
+    display: block; }
+  main .contenedoMain .imagenAcceder {
+    display: none; }
+  main .contenedoMain .contenedoMain {
+    padding-top: 10px; }
+  main .contenedoMain .signupFrmAcceder {
+    padding: 0;
+    display: block;
+    justify-content: center; }
+  main .contenedoMain .acceder {
+    color: white;
+    text-decoration: none; } }
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
+  main .contenedoMain {
+    margin: 10px;
+    padding: 30px;
+    text-decoration: none; }
+  main .contenedoMain .menuIzquierda {
+    display: none; }
+  main .contenedoMain .inicia {
+    display: block; }
+  main .contenedoMain .imagenAcceder {
+    display: none; }
+  main .contenedoMain .contenedoMain {
+    padding-top: 10px; }
+  main .contenedoMain .signupFrmAcceder {
+    padding: 0;
+    display: block;
+    justify-content: center; }
+  main .contenedoMain .acceder {
+    color: white;
+    text-decoration: none; } }
+
+.contenedorRegistracion2 {
+  display: grid;
+  grid-template-columns: 15% 30% 40%;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: " . titulo imgreg"  " . formreg imgreg"; }
+  .contenedorRegistracion2 .tituloRegistracion1 {
+    grid-area: titulo;
+    grid-column-start: 2;
+    grid-row-start: 1; }
+    .contenedorRegistracion2 .tituloRegistracion1 h1 {
+      text-align: center;
+      padding-top: 50px; }
+  .contenedorRegistracion2 .signupFrm {
+    grid-area: formreg;
+    grid-column-start: 2;
+    grid-row-start: 2; }
+    .contenedorRegistracion2 .signupFrm form {
+      padding-top: 110px; }
+  .contenedorRegistracion2 .imagenRegistrar {
+    grid-area: imgreg;
+    grid-column-start: 3; }
+    .contenedorRegistracion2 .imagenRegistrar img {
+      width: 700px;
+      height: 600px;
+      padding-left: 50px; }
