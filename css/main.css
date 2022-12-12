@@ -198,12 +198,59 @@ header {
       grid-column-end: 3; } }
 
 /* Tamaño teléfonos (480-menos ) */
-main .contenedorCotizaciones {
+.contenedorCotizaciones {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
-  grid-template-areas: "img Precio" "img Precio"; }
-  main .contenedorCotizaciones .imgBitcoin {
-    grid-area: img; }
-  main .contenedorCotizaciones .Precio {
+  grid-template-columns: 17% 40% 40% 20%;
+  grid-template-rows: 30% 10% 10% 10%;
+  align-items: center;
+  grid-template-areas: " . img Precio . " " . img Precio . "; }
+  .contenedorCotizaciones .imgBitcoin {
+    grid-area: img;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4; }
+    .contenedorCotizaciones .imgBitcoin img {
+      height: 35rem;
+      width: 35rem;
+      justify-items: left;
+      padding-top: 15rem; }
+  .contenedorCotizaciones .Precio {
     grid-area: Precio; }
+    .contenedorCotizaciones .Precio .PrecioTitulo {
+      grid-column-start: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      padding-top: 19rem; }
+    .contenedorCotizaciones .Precio .PrecioCompra {
+      grid-column-start: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      padding-top: 1rem;
+      text-align: center; }
+    .contenedorCotizaciones .Precio .PrecioVenta {
+      grid-column-start: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      padding-top: 1rem;
+      text-align: center; }
+
+.mainWallet {
+  display: grid;
+  grid-template-columns: 15% 35% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: " . bullet img . "; }
+  .mainWallet .bullet {
+    grid-area: bullet;
+    grid-column-start: 2; }
+    .mainWallet .bullet ul {
+      padding-top: 150px;
+      align-items: left;
+      padding-bottom: 50px; }
+  .mainWallet .imgWallet {
+    grid-area: img;
+    grid-column-start: 3; }
+    .mainWallet .imgWallet img {
+      padding-top: 100px;
+      align-items: right;
+      padding-left: 30px; }
