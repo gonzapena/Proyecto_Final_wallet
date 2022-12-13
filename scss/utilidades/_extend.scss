@@ -6,3 +6,10 @@
     list-style: none; 
 }
 
+%body{ body{ 
+    background-color: $color-fondo;
+    font-family: $font-text;
+    padding: 2rem;
+}
+}
+

@@ -3,18 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none; }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   text-decoration: none;
   list-style: none; }
 
 body {
   background-color: whitesmoke;
-  font-family: monospace,cursive;
+  font-family: monospace, cursive;
   padding: 2rem; }
 
 /* CSS Menu */
@@ -56,7 +50,7 @@ header {
     color: white; }
   header .acceder {
     /* formato del boton*/
-    color: whitesmoke;
+    color: white;
     border: 2px solid #5593f7;
     /*anchura, estilo y color borde*/
     padding: 5px;
@@ -68,32 +62,32 @@ header {
     font-size: 16px;
     background-color: #0062ff;
     /*color botón*/
-    color: whitesmoke;
+    color: white;
     /*color texto*/
     text-decoration: none;
     /*decoración texto*/
     text-transform: initial;
     /*capitalización texto*/
-    font-family: monospace,cursive;
+    font-family: monospace, cursive;
     /*tipografía texto*/
     border-radius: 15px;
     /*bordes redondos*/ }
   header .registrar {
     /* formato del boton*/
     color: blue;
-    border: 2px  #010101;
+    border: 2px black;
     /*anchura, estilo y color borde*/
     padding: 10px;
     /*espacio alrededor texto*/
     background-color: whitesmoke;
     /*color botón*/
-    color: whitesmoke;
+    color: white;
     /*color texto*/
     text-decoration: none;
     /*decoración texto*/
     text-transform: initial;
     /*capitalización texto*/
-    font-family: monospace,cursive;
+    font-family: monospace, cursive;
     /*tipografía texto*/ }
 
 .mainIndex {
@@ -148,7 +142,7 @@ header {
     .mainIndex .comenza h4 {
       position: relative;
       width: fit-content;
-      color: whitesmoke;
+      color: white;
       border: 2px solid #5593f7;
       /*anchura, estilo y color borde*/
       padding-top: 10px;
@@ -158,13 +152,13 @@ header {
       font-size: 16px;
       background: #0062ff;
       /*color botón*/
-      color: whitesmoke;
+      color: white;
       /*color texto*/
       text-decoration: none;
       /*decoración texto*/
       text-transform: initial;
       /*capitalización texto*/
-      font-family: monospace,cursive;
+      font-family: monospace, cursive;
       /*tipografía texto*/
       border-radius: 15px;
       /*bordes redondos*/ }
