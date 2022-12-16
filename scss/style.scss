@@ -87,7 +87,7 @@ header{
     }
 }
 
-    .mainIndex{
+  .mainIndex{
     display: grid;
     grid-template-columns: 15% 40% 30%;
     grid-template-rows: 30% 30% 10% 15% 10%;
@@ -167,7 +167,7 @@ header{
     }
     }
  
-    .footerDerecho{
+  .footerDerecho{
     display: grid;
     grid-template-columns: 20% 30% 30% 20%;
     grid-template-areas:  
@@ -184,16 +184,12 @@ header{
         grid-column-start: 3;
         grid-column-end: 4;
     }
- }
-
- @include media(xs) {
-  property: value;
-}
+    }
 
  //tablet
 
-    /* Tamaño tablet (768-480) */
-    @media all and (min-width: 480px) and (max-width: 992px) {
+    // Tamaño tablet (768-480) 
+  @media all and (min-width: 480px) and (max-width: 992px) {
 
         body{
           display: block;
@@ -251,9 +247,10 @@ header{
 
         }
 
-    }
+}
+
     
-    /* Tamaño teléfonos (480-menos ) */
+    //Tamaño teléfonos (480-menos ) 
     @media all and (min-width: 100px) and (max-width: 480px) { 
 
      header .menuIzquierda{
@@ -307,12 +304,13 @@ header{
        font-size:xx-small;
      }
     }
+  
 
  
 
 // CSS COTIZACIONES 
 
-    .contenedorCotizaciones{
+  .contenedorCotizaciones{
     display: grid;
     grid-template-columns: 17% 40% 40% 20%;
     grid-template-rows: 30% 10% 10% 10%;
@@ -359,6 +357,117 @@ header{
     }
 } 
 
+
+ // Tamaño tablet (768-480) 
+ @media all and (min-width: 480px) and (max-width: 992px) {
+
+  body{
+    display: block;
+  }  
+
+  div .contenedor{
+    display: grid;
+    grid-template-columns:auto; 
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas:  
+        "header"
+        "main"
+        "footer";
+    header .headerIndex{
+        grid-area: header
+    }
+    main .mainIndex{
+        grid-area: main;
+    }   
+    footer .footerDerecho{
+        grid-area: footer;
+    }    
+ }
+
+  header .menuIzquierda {
+          display: none;
+          .menuDerecha{
+              justify-content: center;
+          }
+  }
+
+  .contenedorCotizaciones{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content:  center;
+    align-items: center;
+    grid-template-areas:  
+    "Precio";
+    .imgBitcoin{
+      display: none;
+    }
+    .Precio{
+      font-size: x-large;
+      .PrecioTitulo{  
+        padding-top: 50px;
+      
+      }
+    }
+  }
+
+
+
+ 
+  footer .footerDerecho{
+    padding-top: 50px;
+
+  }
+}
+
+
+// Tamaño teléfonos (480-menos ) 
+@media all and (min-width: 100px) and (max-width: 480px) { 
+
+  body{
+    display: block;
+  }  
+
+  header .menuIzquierda {
+          display: none;
+        .menuDerecha{
+          justify-content: right;
+          justify-items: right;
+          align-items: right;
+          align-content: right;
+                }
+  }
+
+  .contenedorCotizaciones{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content:  center;
+    align-items: center;
+    grid-template-areas:  
+    "Precio";
+      .imgBitcoin{
+        display: none;
+      }
+      .Precio{
+        font-size: medium;
+        .PrecioTitulo{  
+          padding-top: 50px;
+        
+        }
+      }
+  }
+  
+  footer .footerDerecho{
+    padding-top: 50px;
+
+  }
+}
+
+
+
+
+
 // CSS WALLET 
   .mainWallet {
   display: grid;
@@ -386,6 +495,42 @@ header{
     }
     }  
 }  
+
+
+//Tamaño tablet (768-480) 
+@media all and (min-width: 480px) and (max-width: 992px) {
+
+  body{
+    display: block;
+  }  
+
+  .mainWallet {
+    display: grid;
+    grid-template-columns: 15% 35% 50% ;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      " . bullet img . " ; 
+      .bullet {
+          grid-area: bullet;
+          grid-column-start:2;
+          ul{ 
+          padding-top: 150px;
+          align-items: left;
+          padding-bottom: 50px;
+      }
+ 
+  footer .footerDerecho{
+    padding-top: 50px;
+
+  }
+
+
+
+// Tamaño teléfonos (480-menos ) 
+      @media all and (min-width: 100px) and (max-width: 480px) { 
+
+
+      }   
   
     // CSS Acceder
 
@@ -421,50 +566,35 @@ header{
            }
         }
         }
+      
 
+        // Tamaño tablet (768-480) 
+        @media all and (min-width: 480px) and (max-width: 992px) {
+
+        body{
+          display: block;
+        }  
+
+        .imagenAcceder{
+          display:none;
+        }
       
-      @media (max-width: 575.98px) and (orientation: portrait) {
-        main .contenedoMain {
-          margin: 10px;
-          padding: 30px;
-          text-decoration: none; }
-          main .contenedoMain .menuIzquierda {
-            display: none; }
-          main .contenedoMain .inicia {
-            display: block; }
-          main .contenedoMain .imagenAcceder {
-            display: none; }
-          main .contenedoMain .contenedoMain {
-            padding-top: 10px; }
-          main .contenedoMain .signupFrmAcceder {
-            padding: 0;
-            display: block;
-            justify-content: center; }
-          main .contenedoMain .acceder {
-            color: white;
-            text-decoration: none; } }
-      
-      @media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
-        main .contenedoMain {
-          margin: 10px;
-          padding: 30px;
-          text-decoration: none; }
-          main .contenedoMain .menuIzquierda {
-            display: none; }
-          main .contenedoMain .inicia {
-            display: block; }
-          main .contenedoMain .imagenAcceder {
-            display: none; }
-          main .contenedoMain .contenedoMain {
-            padding-top: 10px; }
-          main .contenedoMain .signupFrmAcceder {
-            padding: 0;
-            display: block;
-            justify-content: center; }
-          main .contenedoMain .acceder {
-            color: white;
-            text-decoration: none; } }
-      
+        footer .footerDerecho{
+            padding-top: 50px;
+
+          
+        }
+        
+
+
+      // Tamaño teléfonos (480-menos ) //
+      @media all and (min-width: 100px) and (max-width: 480px) { 
+
+        .imagenAcceder{
+          display:none;
+        }
+
+        }
 
     // CSS Registrate 
 
@@ -479,9 +609,9 @@ header{
           grid-area: titulo;
           grid-column-start: 2;
           grid-row-start: 1;
-          h1 {
-          text-align: center;
-          padding-top: 50px; }
+            h1 {
+            text-align: center;
+            padding-top: 50px; }
         }
         .signupFrm {
             grid-area: formreg;
@@ -489,9 +619,8 @@ header{
             grid-row-start: 2;
             form{
             padding-top: 110px;
-
+            }
         }
-          }
           .imagenRegistrar {
             grid-area: imgreg;
             grid-column-start: 3;
@@ -501,4 +630,34 @@ header{
             padding-left: 50px;
              }
           }
+      }
+
+      // Tamaño tablet (768-480) 
+      @media all and (min-width: 480px) and (max-width: 992px) {
+
+        body{
+          display: block;
+        }  
+
+        main .imagenRegistrar{
+          display:none;
         }
+      
+        footer .footerDerecho{
+            padding-top: 50px;
+
+          
+        }
+      
+      // Tamaño teléfonos (480-menos ) //
+      @media all and (min-width: 100px) and (max-width: 480px) { 
+
+        main .imagenRegistrar{
+          display:none;
+        }
+
+        }
+
+
+
+    }}}}}

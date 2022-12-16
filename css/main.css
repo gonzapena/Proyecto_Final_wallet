@@ -179,10 +179,6 @@ header {
     grid-column-start: 3;
     grid-column-end: 4; }
 
-@media (max-width: 767px) {
-  property: value; }
-
-/* Tamaño tablet (768-480) */
 @media all and (min-width: 480px) and (max-width: 992px) {
   body {
     display: block; }
@@ -216,7 +212,6 @@ header {
   footer .footerDerecho {
     padding-top: 50px; } }
 
-/* Tamaño teléfonos (480-menos ) */
 @media all and (min-width: 100px) and (max-width: 480px) {
   header .menuIzquierda {
     display: none; }
@@ -287,6 +282,66 @@ header {
       padding-top: 1rem;
       text-align: center; }
 
+@media all and (min-width: 480px) and (max-width: 992px) {
+  body {
+    display: block; }
+  div .contenedor {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: "header" "main" "footer"; }
+    div .contenedor header .headerIndex {
+      grid-area: header; }
+    div .contenedor main .mainIndex {
+      grid-area: main; }
+    div .contenedor footer .footerDerecho {
+      grid-area: footer; }
+  header .menuIzquierda {
+    display: none; }
+    header .menuIzquierda .menuDerecha {
+      justify-content: center; }
+  .contenedorCotizaciones {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "Precio"; }
+    .contenedorCotizaciones .imgBitcoin {
+      display: none; }
+    .contenedorCotizaciones .Precio {
+      font-size: x-large; }
+      .contenedorCotizaciones .Precio .PrecioTitulo {
+        padding-top: 50px; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
+
+@media all and (min-width: 100px) and (max-width: 480px) {
+  body {
+    display: block; }
+  header .menuIzquierda {
+    display: none; }
+    header .menuIzquierda .menuDerecha {
+      justify-content: right;
+      justify-items: right;
+      align-items: right;
+      align-content: right; }
+  .contenedorCotizaciones {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "Precio"; }
+    .contenedorCotizaciones .imgBitcoin {
+      display: none; }
+    .contenedorCotizaciones .Precio {
+      font-size: medium; }
+      .contenedorCotizaciones .Precio .PrecioTitulo {
+        padding-top: 50px; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
+
 .mainWallet {
   display: grid;
   grid-template-columns: 15% 35% 50%;
@@ -307,96 +362,94 @@ header {
       align-items: right;
       padding-left: 30px; }
 
-.contenedoMain {
-  display: grid;
-  grid-template-columns: 15% 30% 40%;
-  grid-template-rows: 20% 60%;
-  grid-template-areas: " . h1 img"  " . form img"; }
-  .contenedoMain .inicia {
-    grid-area: h1;
-    grid-column-start: 2;
-    grid-row-start: 1; }
-    .contenedoMain .inicia h1 {
-      text-align: center;
-      padding-top: 50px; }
-  .contenedoMain .signupFrmAcceder {
-    grid-area: form;
-    grid-column-start: 2;
-    grid-row-start: 2; }
-    .contenedoMain .signupFrmAcceder form {
-      align-items: flex-start; }
-  .contenedoMain .imagenAcceder {
-    grid-area: img;
-    grid-column-start: 3; }
-    .contenedoMain .imagenAcceder img {
-      width: 700px;
-      height: 600px;
-      padding-left: 50px; }
-
-@media (max-width: 575.98px) and (orientation: portrait) {
-  main .contenedoMain {
-    margin: 10px;
-    padding: 30px;
-    text-decoration: none; }
-  main .contenedoMain .menuIzquierda {
-    display: none; }
-  main .contenedoMain .inicia {
+@media all and (min-width: 480px) and (max-width: 992px) {
+  body {
     display: block; }
-  main .contenedoMain .imagenAcceder {
-    display: none; }
-  main .contenedoMain .contenedoMain {
-    padding-top: 10px; }
-  main .contenedoMain .signupFrmAcceder {
-    padding: 0;
-    display: block;
-    justify-content: center; }
-  main .contenedoMain .acceder {
-    color: white;
-    text-decoration: none; } }
+  .mainWallet {
+    display: grid;
+    grid-template-columns: 15% 35% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: " . bullet img . "; }
+    .mainWallet .bullet {
+      grid-area: bullet;
+      grid-column-start: 2; }
+      .mainWallet .bullet ul {
+        padding-top: 150px;
+        align-items: left;
+        padding-bottom: 50px; }
+      .mainWallet .bullet footer .footerDerecho {
+        padding-top: 50px; }
+      .mainWallet .bullet .contenedoMain {
+        display: grid;
+        grid-template-columns: 15% 30% 40%;
+        grid-template-rows: 20% 60%;
+        grid-template-areas: " . h1 img"  " . form img"; }
+        .mainWallet .bullet .contenedoMain .inicia {
+          grid-area: h1;
+          grid-column-start: 2;
+          grid-row-start: 1; }
+          .mainWallet .bullet .contenedoMain .inicia h1 {
+            text-align: center;
+            padding-top: 50px; }
+        .mainWallet .bullet .contenedoMain .signupFrmAcceder {
+          grid-area: form;
+          grid-column-start: 2;
+          grid-row-start: 2; }
+          .mainWallet .bullet .contenedoMain .signupFrmAcceder form {
+            align-items: flex-start; }
+        .mainWallet .bullet .contenedoMain .imagenAcceder {
+          grid-area: img;
+          grid-column-start: 3; }
+          .mainWallet .bullet .contenedoMain .imagenAcceder img {
+            width: 700px;
+            height: 600px;
+            padding-left: 50px; } }
+    @media all and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) {
+      .mainWallet .bullet body {
+        display: block; }
+      .mainWallet .bullet .imagenAcceder {
+        display: none; }
+      .mainWallet .bullet footer .footerDerecho {
+        padding-top: 50px; } }
 
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
-  main .contenedoMain {
-    margin: 10px;
-    padding: 30px;
-    text-decoration: none; }
-  main .contenedoMain .menuIzquierda {
-    display: none; }
-  main .contenedoMain .inicia {
+@media all and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) and (min-width: 100px) and (max-width: 480px) {
+  .mainWallet .bullet .imagenAcceder {
+    display: none; } }
+    @media all and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) {
+      .mainWallet .bullet .contenedorRegistracion2 {
+        display: grid;
+        grid-template-columns: 15% 30% 40%;
+        grid-template-rows: 20% 60%;
+        grid-template-areas: " . titulo imgreg"  " . formreg imgreg"; }
+        .mainWallet .bullet .contenedorRegistracion2 .tituloRegistracion1 {
+          grid-area: titulo;
+          grid-column-start: 2;
+          grid-row-start: 1; }
+          .mainWallet .bullet .contenedorRegistracion2 .tituloRegistracion1 h1 {
+            text-align: center;
+            padding-top: 50px; }
+        .mainWallet .bullet .contenedorRegistracion2 .signupFrm {
+          grid-area: formreg;
+          grid-column-start: 2;
+          grid-row-start: 2; }
+          .mainWallet .bullet .contenedorRegistracion2 .signupFrm form {
+            padding-top: 110px; }
+        .mainWallet .bullet .contenedorRegistracion2 .imagenRegistrar {
+          grid-area: imgreg;
+          grid-column-start: 3; }
+          .mainWallet .bullet .contenedorRegistracion2 .imagenRegistrar img {
+            width: 700px;
+            height: 600px;
+            padding-left: 50px; } }
+
+@media all and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) {
+  .mainWallet .bullet body {
     display: block; }
-  main .contenedoMain .imagenAcceder {
+  .mainWallet .bullet main .imagenRegistrar {
     display: none; }
-  main .contenedoMain .contenedoMain {
-    padding-top: 10px; }
-  main .contenedoMain .signupFrmAcceder {
-    padding: 0;
-    display: block;
-    justify-content: center; }
-  main .contenedoMain .acceder {
-    color: white;
-    text-decoration: none; } }
+  .mainWallet .bullet footer .footerDerecho {
+    padding-top: 50px; } }
 
-.contenedorRegistracion2 {
-  display: grid;
-  grid-template-columns: 15% 30% 40%;
-  grid-template-rows: 20% 60%;
-  grid-template-areas: " . titulo imgreg"  " . formreg imgreg"; }
-  .contenedorRegistracion2 .tituloRegistracion1 {
-    grid-area: titulo;
-    grid-column-start: 2;
-    grid-row-start: 1; }
-    .contenedorRegistracion2 .tituloRegistracion1 h1 {
-      text-align: center;
-      padding-top: 50px; }
-  .contenedorRegistracion2 .signupFrm {
-    grid-area: formreg;
-    grid-column-start: 2;
-    grid-row-start: 2; }
-    .contenedorRegistracion2 .signupFrm form {
-      padding-top: 110px; }
-  .contenedorRegistracion2 .imagenRegistrar {
-    grid-area: imgreg;
-    grid-column-start: 3; }
-    .contenedorRegistracion2 .imagenRegistrar img {
-      width: 700px;
-      height: 600px;
-      padding-left: 50px; }
+@media all and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) and (min-width: 480px) and (max-width: 992px) and (min-width: 100px) and (max-width: 480px) {
+  .mainWallet .bullet main .imagenRegistrar {
+    display: none; } }
