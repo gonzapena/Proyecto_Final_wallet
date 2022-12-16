@@ -186,12 +186,38 @@ header{
     }
  }
 
+ @include media(xs) {
+  property: value;
+}
+
  //tablet
 
     /* Tamaño tablet (768-480) */
     @media all and (min-width: 480px) and (max-width: 992px) {
 
-        
+        body{
+          display: block;
+        }  
+
+        div .contenedor{
+          display: grid;
+          grid-template-columns:auto; 
+          grid-template-rows: 20% 60% 20%;
+          grid-template-areas:  
+              "header"
+              "main"
+              "footer";
+          header .headerIndex{
+              grid-area: header
+          }
+          main .mainIndex{
+              grid-area: main
+          }   
+          footer .footerDerecho{
+              grid-area: footer
+          }    
+       }
+
         header .menuIzquierda {
                 display: none;
                 .menuDerecha{
@@ -199,21 +225,90 @@ header{
                 }
         }
 
+        .mainIndex{
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+          grid-template-areas:  
+          "h1"
+          "logo"
+          "slogan"
+          "texto"
+          "comenza";}
+
         main .imagenWallet img{
             display: none;
             .tituloPrincipal h1{
             grid-column-start: 3;
             grid-column-end: 3;
+            .sloganMarca{
+              padding-top:50px;
+            }
         }
     }
+        footer .footerDerecho{
+          padding-top: 50px;
+
+        }
 
     }
     
     /* Tamaño teléfonos (480-menos ) */
-    @media all and (max-width: 480px) { 
+    @media all and (min-width: 100px) and (max-width: 480px) { 
 
+     header .menuIzquierda{
+        display: none;
+        }
+
+      .mainIndex{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:  
+        "h1"
+        "slogan"
+        "texto"
+        "comenza";
+        .tituloPrincipal{
+          font-size: medium;
+          padding-bottom: 20px;
+        }
+        .imagenMonedas{
+          display:none;
+        }
+        .contenedor{
+          display: block;
+        }   
+        .imagenWallet{ 
+          display: none;
+        }
+        .menuIzquierda{
+          display: none;
+          }
+          .menuDerecha{
+            display: none;
+            justify-content: left;
+            }
+        .sloganMarca{
+          font-size: small;
+          padding-bottom: 30px;
+        }
+        .textoHome{
+          font-size: x-small;
+          padding-bottom: 30px;
+        }
+        .comenza{
+          padding-bottom: 30px;
+        }
+
+      }
+
+      .footerDerecho{
+       font-size:xx-small;
+     }
     }
-    
+
+ 
 
 // CSS COTIZACIONES 
 
