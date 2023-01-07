@@ -3,14 +3,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none; }
+  text-decoration: none;
+  list-style: none; }
 
 body {
   background-color: whitesmoke;
-  font-family: monospace,cursive;
+  font-family: monospace, cursive;
   padding: 2rem; }
 
-/* CSS Menu */
+div .contenedor {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-template-rows: 20% 60% 20%;
+  grid-template-areas: " . header header . " " . main main . " " . footer footer . "; }
+  div .contenedor header .headerIndex {
+    grid-area: header; }
+  div .contenedor main .mainIndex {
+    grid-area: main; }
+  div .contenedor footer .footerDerecho {
+    grid-area: footer; }
+
 header {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -18,15 +30,12 @@ header {
   grid-template-areas: "izquierda derecha";
   align-items: center;
   /* Alinear el codigo en la cada*/ }
-  header .contenedor {
-    display: grid; }
   header .menuIzquierda {
     grid-area: izquierda;
     display: flex;
     align-items: center;
     gap: 1rem;
     height: 60px;
-    list-style: none;
     justify-items: center;
     text-decoration: black;
     padding-left: 250px; }
@@ -40,7 +49,7 @@ header {
     color: white; }
   header .acceder {
     /* formato del boton*/
-    color: whitesmoke;
+    color: white;
     border: 2px solid #5593f7;
     /*anchura, estilo y color borde*/
     padding: 5px;
@@ -52,328 +61,405 @@ header {
     font-size: 16px;
     background-color: #0062ff;
     /*color botón*/
-    color: whitesmoke;
+    color: white;
     /*color texto*/
     text-decoration: none;
     /*decoración texto*/
     text-transform: initial;
     /*capitalización texto*/
-    font-family: monospace,cursive;
+    font-family: monospace, cursive;
     /*tipografía texto*/
     border-radius: 15px;
     /*bordes redondos*/ }
   header .registrar {
     /* formato del boton*/
     color: blue;
-    border: 2px  #010101;
+    border: 2px black;
     /*anchura, estilo y color borde*/
     padding: 10px;
     /*espacio alrededor texto*/
     background-color: whitesmoke;
     /*color botón*/
-    color: whitesmoke;
+    color: white;
     /*color texto*/
     text-decoration: none;
     /*decoración texto*/
     text-transform: initial;
     /*capitalización texto*/
-    font-family: monospace,cursive;
+    font-family: monospace, cursive;
     /*tipografía texto*/ }
 
-main {
+.mainIndex {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 10% 20% 20%;
-  grid-template-areas: "h1 img" "logo img" "slogan img" "texto img" "comenza img" "footer footer"; }
-  main .tituloPrincipal {
+  grid-template-columns: 15% 40% 30%;
+  grid-template-rows: 30% 30% 10% 15% 10%;
+  grid-template-areas: "h1 img" "logo img" "slogan img" "texto img" "comenza img"; }
+  .mainIndex .tituloPrincipal {
     grid-area: h1;
     font-size: x-large;
-    text-align: left;
-    padding-top: 120px;
-    padding-left: 250px; }
-  main .comenza {
-    grid-area: comenza; }
-  main .imagenMonedas {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-content: left;
+    padding-top: 50px; }
+  .mainIndex .imagenMonedas {
     grid-area: logo;
-    height: 13rem;
-    background-color: transparent;
-    padding-left: 210px; }
-  main .sloganMarca {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3; }
+    .mainIndex .imagenMonedas img {
+      width: 25rem;
+      height: auto;
+      align-items: left; }
+  .mainIndex .sloganMarca {
     grid-area: slogan;
-    padding-left: 250px;
-    padding-top: 125px; }
-  main .textoHome {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4; }
+  .mainIndex .textoHome {
     grid-area: texto;
-    padding-left: 250px;
-    padding-top: 40px; }
-  main .imagenWallet {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5; }
+  .mainIndex .imagenWallet {
     grid-area: img;
-    padding-left: 40px; }
-  main .footerDerecho {
-    grid-area: footer;
-    text-align: center; }
-  main .comenza {
-    position: relative;
-    left: 250px;
-    width: fit-content;
-    color: whitesmoke;
-    border: 2px solid #5593f7;
-    /*anchura, estilo y color borde*/
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 25px;
-    padding-left: 25px;
-    font-size: 16px;
-    background: #0062ff;
-    /*color botón*/
-    color: whitesmoke;
-    /*color texto*/
-    text-decoration: none;
-    /*decoración texto*/
-    text-transform: initial;
-    /*capitalización texto*/
-    font-family: monospace,cursive;
-    /*tipografía texto*/
-    border-radius: 15px;
-    /*bordes redondos*/
-    text-align: center; }
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    align-content: center; }
+  .mainIndex .comenza {
+    grid-area: comenza;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6; }
+    .mainIndex .comenza h4 {
+      position: relative;
+      width: fit-content;
+      color: white;
+      border: 2px solid #5593f7;
+      /*anchura, estilo y color borde*/
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 25px;
+      padding-left: 25px;
+      font-size: 16px;
+      background: #0062ff;
+      /*color botón*/
+      color: white;
+      /*color texto*/
+      text-decoration: none;
+      /*decoración texto*/
+      text-transform: initial;
+      /*capitalización texto*/
+      font-family: monospace, cursive;
+      /*tipografía texto*/
+      border-radius: 15px;
+      /*bordes redondos*/ }
 
-@media screen and (max-width: 1200px) {
+.footerDerecho {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-template-areas: " . izquierda derecha . ";
+  align-items: center;
+  /* Alinear el codigo en la cada*/
+  font-size: x-small; }
+  .footerDerecho .row {
+    grid-area: izquierda;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-items: start; }
+    .footerDerecho .row .redes-footer img {
+      width: 20px;
+      height: 20px; }
+  .footerDerecho .row_2 {
+    grid-area: derecha;
+    grid-column-start: 3;
+    grid-column-end: 4; }
+
+@media all and (min-width: 480px) and (max-width: 992px) {
   body {
-    margin: 20px; }
-  .menuIzquierda {
-    display: none; }
-  .contenedor_2 {
-    display: flex;
-    flex-direction: column; }
-  .imagenWallet {
-    display: none; }
-  .tituloPrincipal {
-    padding-top: 50px;
-    padding-left: 20px;
-    text-align: left;
-    height: 50px;
-    font-size: large; }
-  .imagenWallet {
-    padding-left: 40px;
-    display: none; }
-  .sloganMarca {
-    padding-left: 250px;
-    padding-top: 125px;
-    display: none; }
-  .imagenMonedas {
-    display: none; }
-  .textoHome {
-    padding-left: 20px;
-    padding-top: 150px;
-    padding-bottom: 50px; }
-  .footerDerecho {
-    padding-top: 20px;
-    text-align: center; } }
-
-/* CSS COTIZACIONES */
-main .contenedorCotizaciones {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 10% 20% 20%;
-  grid-template-areas: "h1 img" "logo img" "slogan img" "texto img" "comenza img" "footer footer"; }
-  main .contenedorCotizaciones .tituloPrincipal {
-    grid-area: h1;
-    font-size: x-large;
-    text-align: left;
-    padding-top: 120px;
-    padding-left: 250px; }
-  main .contenedorCotizaciones .comenza {
-    grid-area: comenza; }
-  main .contenedorCotizaciones .imagenMonedas {
-    grid-area: logo;
-    height: 13rem;
-    background-color: transparent;
-    padding-left: 210px; }
-  main .contenedorCotizaciones .sloganMarca {
-    grid-area: slogan;
-    padding-left: 250px;
-    padding-top: 125px; }
-  main .contenedorCotizaciones .textoHome {
-    grid-area: texto;
-    padding-left: 250px;
-    padding-top: 40px; }
-  main .contenedorCotizaciones .imagenWallet {
-    grid-area: img;
-    padding-left: 40px; }
-  main .contenedorCotizaciones .footerDerecho {
-    grid-area: footer;
-    text-align: center; }
-  main .contenedorCotizaciones .imgBitcoin {
-    height: 30rem;
-    background-color: transparent;
-    padding-left: 210px;
-    grid-area: img;
-    margin-top: 40px; }
-  main .contenedorCotizaciones .contenedorCotizaciones {
+    display: block; }
+  div .contenedor {
     display: grid;
-    grid-template-areas: "img precio" "footer footer"; }
-  main .contenedorCotizaciones .Precio {
-    grid-area: precio;
-    justify-content: right;
-    margin-top: 150px;
-    margin-left: 80px; }
-
-footer .footerCotizaciones {
-  grid-area: footer;
-  text-align: center;
-  margin-top: 30px; }
-
-/* CSS wallet */
-main .mainWallet {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 10% 20% 20%;
-  grid-template-areas: "h1 img" "logo img" "slogan img" "texto img" "comenza img" "footer footer"; }
-  main .mainWallet .tituloPrincipal {
-    grid-area: h1;
-    font-size: x-large;
-    text-align: left;
-    padding-top: 120px;
-    padding-left: 250px; }
-  main .mainWallet .comenza {
-    grid-area: comenza; }
-  main .mainWallet .imagenMonedas {
-    grid-area: logo;
-    height: 13rem;
-    background-color: transparent;
-    padding-left: 210px; }
-  main .mainWallet .sloganMarca {
-    grid-area: slogan;
-    padding-left: 250px;
-    padding-top: 125px; }
-  main .mainWallet .textoHome {
-    grid-area: texto;
-    padding-left: 250px;
-    padding-top: 40px; }
-  main .mainWallet .imagenWallet {
-    grid-area: img;
-    padding-left: 40px; }
-  main .mainWallet .footerDerecho {
-    grid-area: footer;
-    text-align: center; }
-  main .mainWallet .img {
-    height: 30em;
-    background-color: transparent; }
-
-header .navbar-nav.navbar-center {
-  position: static;
-  left: 10%;
-  transform: translatex(20%); }
-
-/* CSS acceder */
-main .contenedoMain {
-  display: grid;
-  grid-template-columns: 60% 30%;
-  grid-template-rows: 5% 10% 5%;
-  grid-template-areas: "h1 img" "form img" "footer img"; }
-  main .contenedoMain .inicia {
-    grid-area: h1;
-    text-align: center;
-    padding-top: 50px; }
-  main .contenedoMain .signupFrmAcceder {
-    grid-area: form;
-    align-items: flex-start;
-    padding: 100px; }
-  main .contenedoMain .imagenAcceder {
-    grid-area: img;
-    width: 600px;
-    height: 700px;
-    align-items: flex-end; }
-  main .contenedoMain .footerDerecho {
-    grid-area: footer;
-    text-align: center;
-    padding-top: 20px; }
-
-@media (max-width: 575.98px) and (orientation: portrait) {
-  main .contenedoMain {
-    margin: 10px;
-    padding: 30px;
-    text-decoration: none; }
-    main .contenedoMain .menuIzquierda {
-      display: none; }
-    main .contenedoMain .inicia {
-      display: block; }
-    main .contenedoMain .imagenAcceder {
-      display: none; }
-    main .contenedoMain .contenedoMain {
-      padding-top: 10px; }
-    main .contenedoMain .signupFrmAcceder {
-      padding: 0;
-      display: block;
+    grid-template-columns: auto;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: "header" "main" "footer"; }
+    div .contenedor header .headerIndex {
+      grid-area: header; }
+    div .contenedor main .mainIndex {
+      grid-area: main; }
+    div .contenedor footer .footerDerecho {
+      grid-area: footer; }
+  header .menuIzquierda {
+    display: none; }
+    header .menuIzquierda .menuDerecha {
       justify-content: center; }
-    main .contenedoMain .acceder {
-      color: white;
-      text-decoration: none; } }
+  .mainIndex {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "h1" "logo" "slogan" "texto" "comenza"; }
+  main .imagenWallet img {
+    display: none; }
+    main .imagenWallet img .tituloPrincipal h1 {
+      grid-column-start: 3;
+      grid-column-end: 3; }
+      main .imagenWallet img .tituloPrincipal h1 .sloganMarca {
+        padding-top: 50px; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
 
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
-  main .contenedoMain {
-    margin: 10px;
-    padding: 30px;
-    text-decoration: none; }
-    main .contenedoMain .menuIzquierda {
+@media all and (min-width: 100px) and (max-width: 480px) {
+  header .menuIzquierda {
+    display: none; }
+  .mainIndex {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "h1" "slogan" "texto" "comenza"; }
+    .mainIndex .tituloPrincipal {
+      font-size: medium;
+      padding-bottom: 20px; }
+    .mainIndex .imagenMonedas {
       display: none; }
-    main .contenedoMain .inicia {
+    .mainIndex .contenedor {
       display: block; }
-    main .contenedoMain .imagenAcceder {
+    .mainIndex .imagenWallet {
       display: none; }
-    main .contenedoMain .contenedoMain {
-      padding-top: 10px; }
-    main .contenedoMain .signupFrmAcceder {
-      padding: 0;
-      display: block;
-      justify-content: center; }
-    main .contenedoMain .acceder {
-      color: white;
-      text-decoration: none; } }
+    .mainIndex .menuIzquierda {
+      display: none; }
+    .mainIndex .menuDerecha {
+      display: none;
+      justify-content: left; }
+    .mainIndex .sloganMarca {
+      font-size: small;
+      padding-bottom: 30px; }
+    .mainIndex .textoHome {
+      font-size: x-small;
+      padding-bottom: 30px; }
+    .mainIndex .comenza {
+      padding-bottom: 30px; }
+  .footerDerecho {
+    font-size: xx-small; } }
 
-/* CSS registrate */
-main .contenedorRegistracion {
+.contenedorCotizaciones {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: "h1 img" "form img" "footer img"; }
-  main .contenedorRegistracion .tituloRegistracion1 {
-    grid-area: h1;
-    text-align: center;
-    padding-top: 50px; }
-  main .contenedorRegistracion .signupFrm {
-    grid-area: form;
+  grid-template-columns: 17% 40% 40% 20%;
+  grid-template-rows: 30% 10% 10% 10%;
+  align-items: center;
+  grid-template-areas: " . img Precio . " " . img Precio . "; }
+  .contenedorCotizaciones .imgBitcoin {
+    grid-area: img;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4; }
+    .contenedorCotizaciones .imgBitcoin img {
+      height: 35rem;
+      width: 27rem;
+      justify-items: left;
+      padding-top: 15rem; }
+  .contenedorCotizaciones .Precio {
+    grid-area: Precio; }
+    .contenedorCotizaciones .Precio .PrecioTitulo {
+      grid-column-start: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      padding-top: 19rem;
+      padding-bottom: 40px;
+      text-align: center; }
+    .contenedorCotizaciones .Precio .PrecioCompra {
+      grid-column-start: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      padding-top: 1rem;
+      text-align: center; }
+    .contenedorCotizaciones .Precio .PrecioVenta {
+      grid-column-start: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      padding-top: 1rem;
+      text-align: center; }
+    .contenedorCotizaciones .Precio .PrecioOperacion {
+      text-align: center;
+      margin: 20px; }
+
+@media all and (min-width: 480px) and (max-width: 992px) {
+  body {
+    display: block; }
+  div .contenedor {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: "header" "main" "footer"; }
+    div .contenedor header .headerIndex {
+      grid-area: header; }
+    div .contenedor main .mainIndex {
+      grid-area: main; }
+    div .contenedor footer .footerDerecho {
+      grid-area: footer; }
+  header .menuIzquierda {
+    display: none; }
+    header .menuIzquierda .menuDerecha {
+      justify-content: center; }
+  .contenedorCotizaciones {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
     align-items: center;
-    padding: 100px; }
-  main .contenedorRegistracion .imagenRegistrar {
+    grid-template-areas: "Precio"; }
+    .contenedorCotizaciones .imgBitcoin {
+      display: none; }
+    .contenedorCotizaciones .Precio {
+      font-size: x-large; }
+      .contenedorCotizaciones .Precio .PrecioTitulo {
+        padding-top: 50px; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
+
+@media all and (min-width: 100px) and (max-width: 480px) {
+  body {
+    display: block; }
+  header .menuIzquierda {
+    display: none; }
+    header .menuIzquierda .menuDerecha {
+      justify-content: right;
+      justify-items: right;
+      align-items: right;
+      align-content: right; }
+  .contenedorCotizaciones {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "Precio"; }
+    .contenedorCotizaciones .imgBitcoin {
+      display: none; }
+    .contenedorCotizaciones .Precio {
+      font-size: medium; }
+      .contenedorCotizaciones .Precio .PrecioTitulo {
+        padding-top: 50px; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
+
+.mainWallet {
+  display: grid;
+  grid-template-columns: 15% 35% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: " . bullet img . "; }
+  .mainWallet .bullet {
+    grid-area: bullet;
+    grid-column-start: 2; }
+    .mainWallet .bullet ul {
+      padding-top: 150px;
+      align-items: left;
+      padding-bottom: 50px; }
+  .mainWallet .imgWallet {
     grid-area: img;
-    width: 600px;
-    height: 700px;
-    align-items: flex-end; }
-  main .contenedorRegistracion .footerDerecho {
-    grid-area: footer;
-    text-align: center;
-    padding-top: 20px; }
+    grid-column-start: 3; }
+    .mainWallet .imgWallet img {
+      padding-top: 130px;
+      align-items: right;
+      padding-left: 30px; }
 
-@media (max-width: 575.98px) and (orientation: portrait) {
-  main .contenedorRegistracion {
-    margin: 10px;
-    padding: 30px;
-    text-decoration: none; }
-    main .contenedorRegistracion .menuIzquierda {
-      display: none; }
-    main .contenedorRegistracion .imagenRegistrar {
-      display: none; }
-    main .contenedorRegistracion .signupFrm {
-      text-align: auto; } }
+@media all and (min-width: 480px) and (max-width: 992px) {
+  body {
+    display: block; }
+  .mainWallet {
+    display: grid;
+    grid-template-columns: 15% 35% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: " . bullet img . "; }
+    .mainWallet .bullet {
+      grid-area: bullet;
+      grid-column-start: 2; }
+      .mainWallet .bullet ul {
+        padding-top: 150px;
+        align-items: left;
+        padding-bottom: 50px; }
+    .mainWallet footer .footerDerecho {
+      padding-top: 50px; } }
 
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation: landscape) {
-  main .contenedorRegistracion {
-    margin: 10px;
-    padding: 30px;
-    text-decoration: none; }
-    main .contenedorRegistracion .menuIzquierda {
-      display: none; }
-    main .contenedorRegistracion .imagenRegistrar {
-      display: none; } }
+.contenedoMain {
+  display: grid;
+  grid-template-columns: 15% 30% 40%;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: " . h1 img"  " . form img"; }
+  .contenedoMain .inicia {
+    grid-area: h1;
+    grid-column-start: 2;
+    grid-row-start: 1; }
+    .contenedoMain .inicia h1 {
+      text-align: center;
+      padding-top: 50px; }
+  .contenedoMain .signupFrmAcceder {
+    grid-area: form;
+    grid-column-start: 2;
+    grid-row-start: 2; }
+    .contenedoMain .signupFrmAcceder form {
+      align-items: flex-start; }
+  .contenedoMain .imagenAcceder {
+    grid-area: img;
+    grid-column-start: 3; }
+    .contenedoMain .imagenAcceder img {
+      width: 700px;
+      height: 600px;
+      padding-left: 50px; }
+
+@media all and (min-width: 480px) and (max-width: 992px) {
+  body {
+    display: block; }
+  .imagenAcceder {
+    display: none; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
+
+@media all and (min-width: 100px) and (max-width: 480px) {
+  .imagenAcceder {
+    display: none; } }
+
+.contenedorRegistracion2 {
+  display: grid;
+  grid-template-columns: 15% 30% 40%;
+  grid-template-rows: 20% 60%;
+  grid-template-areas: " . titulo imgreg"  " . formreg imgreg"; }
+  .contenedorRegistracion2 .tituloRegistracion1 {
+    grid-area: titulo;
+    grid-column-start: 2;
+    grid-row-start: 1; }
+    .contenedorRegistracion2 .tituloRegistracion1 h1 {
+      text-align: center;
+      padding-top: 50px; }
+  .contenedorRegistracion2 .signupFrm {
+    grid-area: formreg;
+    grid-column-start: 2;
+    grid-row-start: 2; }
+    .contenedorRegistracion2 .signupFrm form {
+      padding-top: 110px; }
+  .contenedorRegistracion2 .imagenRegistrar {
+    grid-area: imgreg;
+    grid-column-start: 3; }
+    .contenedorRegistracion2 .imagenRegistrar img {
+      width: 700px;
+      height: 600px;
+      padding-left: 50px; }
+
+@media all and (min-width: 480px) and (max-width: 992px) {
+  body {
+    display: block; }
+  main .imagenRegistrar {
+    display: none; }
+  footer .footerDerecho {
+    padding-top: 50px; } }
+
+@media all and (min-width: 100px) and (max-width: 480px) {
+  main .imagenRegistrar {
+    display: none; } }

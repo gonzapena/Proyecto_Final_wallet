@@ -1,24 +1,37 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    
-    @extend %reset;
+* { @extend %reset;
 }
 
 @import "utilidades/variables";
 @import "utilidades/mixin";
 @import "utilidades/mapas";
 @import "utilidades/extend";
-@import "utilidades/condicionales";
 
 body {
-    background-color: whitesmoke;
-    font-family: monospace,cursive;
+    background-color: $color-fondo;
+    font-family: $font-text;
     padding: 2rem;
 }
- /* CSS Menu */
+ 
+// CSS Menu */
+
+ div .contenedor{
+    display: grid;
+    grid-template-columns:20% 30% 30% 20%; 
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas:  
+        " . header header . "
+        " . main main . "
+        " . footer footer . ";
+    header .headerIndex{
+        grid-area: header
+    }
+    main .mainIndex{
+        grid-area: main
+    }   
+    footer .footerDerecho{
+        grid-area: footer
+    }    
+}
 
 header{
     display: grid;
@@ -26,16 +39,12 @@ header{
     grid-template-areas:  
         "izquierda derecha";
     align-items: center; /* Alinear el codigo en la cada*/
-    .contenedor{
-        display:grid;
-        }
     .menuIzquierda{
         grid-area: izquierda;
         display:flex;
         align-items: center;
         gap: 1rem;
         height: 60px;
-        list-style: none;
         justify-items: center;
         text-decoration: black;
         padding-left: 250px;
@@ -51,433 +60,598 @@ header{
     }
     .acceder{
         /* formato del boton*/
-        color: whitesmoke;
-        border:2px solid #5593f7; /*anchura, estilo y color borde*/
+        color: $color-letra;
+        border:2px solid $color-border; /*anchura, estilo y color borde*/
         padding: 5px; /*espacio alrededor texto*/
         padding-left: 25px;
         padding-top: 8px;
         padding-bottom: 2px;
         padding-right: 25px;
         font-size: 16px;
-        background-color: #0062ff; /*color botón*/
-        color: whitesmoke; /*color texto*/
+        background-color: $color-background-comenza; /*color botón*/
+        color: $color-letra ;/*color texto*/
         text-decoration: none; /*decoración texto*/
         text-transform:initial; /*capitalización texto*/
-        font-family: monospace,cursive; /*tipografía texto*/
+        font-family: $font-text; /*tipografía texto*/
         border-radius: 15px ; /*bordes redondos*/
     }
     .registrar{
         /* formato del boton*/
-        color: blue;
-        border: 2px  #010101; /*anchura, estilo y color borde*/
+        color: $color-registrar;
+        border: 2px $color-borde ;/*anchura, estilo y color borde*/
         padding: 10px; /*espacio alrededor texto*/
-        background-color: whitesmoke; /*color botón*/
-        color: whitesmoke; /*color texto*/
+        background-color: $color-fondo; /*color botón*/
+        color: $color-letra; /*color texto*/
         text-decoration: none; /*decoración texto*/
         text-transform: initial; /*capitalización texto*/
-        font-family: monospace,cursive; /*tipografía texto*/
+        font-family: $font-text; /*tipografía texto*/
     }
-
 }
- main{
+
+.mainIndex{
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 30% 10% 20% 20% ;
+    grid-template-columns: 15% 40% 30%;
+    grid-template-rows: 30% 30% 10% 15% 10%;
     grid-template-areas:  
     "h1 img"
     "logo img"
     "slogan img"
     "texto img"
-    "comenza img"
-    "footer footer";
+    "comenza img";
     .tituloPrincipal{
         grid-area:h1;
         font-size:x-large;
-        text-align: left;
-        padding-top: 120px;
-        padding-left: 250px;
-    }
-    .comenza{
-        grid-area:comenza;
+        grid-column-start:2;
+        grid-column-end: 3;
+        grid-row-start:1;
+        grid-row-end: 2;
+        justify-content: left;
+        padding-top: 50px;
     }
     .imagenMonedas{
         grid-area:logo;
-        height: 13rem;
-        background-color: transparent;
-        padding-left: 210px;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:2;
+        grid-row-end:3;
+        img{
+        width: 25rem;
+        height: auto;
+        align-items: left;
+        }
     }
     .sloganMarca{
         grid-area:slogan;
-        padding-left: 250px;
-        padding-top: 125px;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:3;
+        grid-row-end:4;
     }
     .textoHome{
         grid-area:texto;
-        padding-left: 250px;
-        padding-top: 40px;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:4;
+        grid-row-end:5;
     }
     .imagenWallet{
         grid-area:img;
-        padding-left: 40px;
-    }
-    .footerDerecho {
-        grid-area: footer;
-        text-align: center;
+        grid-column-start:3;
+        grid-column-end: 4;
+        grid-row-start:1;
+        grid-row-end:6;
+        align-content: center;       
     }
     .comenza{
-        position: relative;
-        left: 250px;
+        grid-area:comenza;
+        grid-column-start:2;
+        grid-column-end: 3;
+        grid-row-start:5;
+        grid-row-end:6;
+        h4 { 
+        position:relative;
         width: fit-content;
-        color: whitesmoke;
-        border: 2px solid #5593f7; /*anchura, estilo y color borde*/
+        color: $color-letra;
+        border: 2px solid $color-border; /*anchura, estilo y color borde*/
         padding-top: 10px;
         padding-bottom: 10px;
         padding-right: 25px;
         padding-left: 25px;
         font-size: 16px;
-        background: #0062ff; /*color botón*/
-        color: whitesmoke; /*color texto*/
+        background: $color-background-comenza; /*color botón*/
+        color: $color-letra; /*color texto*/
         text-decoration: none; /*decoración texto*/
         text-transform:initial; /*capitalización texto*/
-        font-family: monospace,cursive; /*tipografía texto*/
+        font-family: $font-text; /*tipografía texto*/
         border-radius: 15px ; /*bordes redondos*/
-        text-align: center;
-    }
- }
-
- @media screen and (max-width: 1200px) {
-    
-    body{
-        margin:20px;
-    }
-    .menuIzquierda{
-        display: none;
-    }
-    .contenedor_2{
-        display:flex;
-        flex-direction: column;
-    }
-    .imagenWallet{
-        display:none
-    }
-    .tituloPrincipal{
-        padding-top: 50px;
-        padding-left: 20px;
-        text-align: left;
-        height: 50px;
-        font-size: large;
-     }
-     .imagenWallet{
-         padding-left: 40px;
-         display:none;
-     }
-     .sloganMarca{
-         padding-left: 250px;
-         padding-top: 125px;
-         display: none;
-     }
-     .imagenMonedas{
-        display:none;
-     }
-     .textoHome{
-         padding-left: 20px;
-         padding-top: 150px;
-         padding-bottom: 50px;
-     }
-     .footerDerecho{
-        padding-top: 20px;
-         text-align: center;
-     }
-    }
-
-    /* CSS COTIZACIONES */
-
-    main .contenedorCotizaciones{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 30% 10% 20% 20% ;
-        grid-template-areas:  
-        "h1 img"
-        "logo img"
-        "slogan img"
-        "texto img"
-        "comenza img"
-        "footer footer";
-        .tituloPrincipal{
-            grid-area:h1;
-            font-size:x-large;
-            text-align: left;
-            padding-top: 120px;
-            padding-left: 250px;
         }
-        .comenza{
-            grid-area:comenza;
+    }
+    }
+ 
+  .footerDerecho{
+    display: grid;
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-areas:  
+        " . izquierda derecha . ";
+    align-items: center; /* Alinear el codigo en la cada*/
+    font-size: x-small;
+    .row{
+        grid-area: izquierda;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        justify-items: start;
+        .redes-footer img{
+          width: 20px;
+          height: 20px;
+        }
+    }
+    .row_2{
+        grid-area: derecha;
+        grid-column-start: 3;
+        grid-column-end: 4;
+    }
+    }
+
+ //tablet
+
+  // Tamaño tablet (768-480) 
+  @media all and (min-width: 480px) and (max-width: 992px) {
+
+        body{
+          display: block;
+        }  
+
+        div .contenedor{
+          display: grid;
+          grid-template-columns:auto; 
+          grid-template-rows: 20% 60% 20%;
+          grid-template-areas:  
+              "header"
+              "main"
+              "footer";
+          header .headerIndex{
+              grid-area: header
+          }
+          main .mainIndex{
+              grid-area: main
+          }   
+          footer .footerDerecho{
+              grid-area: footer
+          }    
+       }
+
+        header .menuIzquierda {
+                display: none;
+                .menuDerecha{
+                    justify-content: center;
+                }
+        }
+
+        .mainIndex{
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+          grid-template-areas:  
+          "h1"
+          "logo"
+          "slogan"
+          "texto"
+          "comenza";}
+
+        main .imagenWallet img{
+            display: none;
+            .tituloPrincipal h1{
+            grid-column-start: 3;
+            grid-column-end: 3;
+            .sloganMarca{
+              padding-top:50px;
+            }
+        }
+    }
+        footer .footerDerecho{
+          padding-top: 50px;
+
+        }
+
+}
+
+//Tamaño teléfonos (480-menos ) 
+@media all and (min-width: 100px) and (max-width: 480px) { 
+
+     header .menuIzquierda{
+        display: none;
+        }
+
+      .mainIndex{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:  
+        "h1"
+        "slogan"
+        "texto"
+        "comenza";
+        .tituloPrincipal{
+          font-size: medium;
+          padding-bottom: 20px;
         }
         .imagenMonedas{
-            grid-area:logo;
-            height: 13rem;
-            background-color: transparent;
-            padding-left: 210px;
+          display:none;
         }
+        .contenedor{
+          display: block;
+        }   
+        .imagenWallet{ 
+          display: none;
+        }
+        .menuIzquierda{
+          display: none;
+          }
+          .menuDerecha{
+            display: none;
+            justify-content: left;
+            }
         .sloganMarca{
-            grid-area:slogan;
-            padding-left: 250px;
-            padding-top: 125px;
+          font-size: small;
+          padding-bottom: 30px;
         }
         .textoHome{
-            grid-area:texto;
-            padding-left: 250px;
-            padding-top: 40px;
+          font-size: x-small;
+          padding-bottom: 30px;
         }
-        .imagenWallet{
-            grid-area:img;
-            padding-left: 40px;
+        .comenza{
+          padding-bottom: 30px;
         }
-        .footerDerecho {
-            grid-area: footer;
+
+      }
+      .footerDerecho{
+       font-size:xx-small;
+     }
+}
+  
+
+// CSS COTIZACIONES 
+
+.contenedorCotizaciones{
+    display: grid;
+    grid-template-columns: 17% 40% 40% 20%;
+    grid-template-rows: 30% 10% 10% 10%;
+    align-items: center;
+    grid-template-areas:  
+    " . img Precio . "
+    " . img Precio . ";
+    .imgBitcoin{
+        grid-area:img;
+        grid-column-start:2;
+        grid-column-end:3;
+        grid-row-start:1;
+        grid-row-end:4;
+        img { 
+        height: 35rem;
+        width: 27rem;
+        justify-items: left;
+        padding-top: 15rem;
+        }
+    }
+    .Precio{
+        grid-area:Precio;
+        .PrecioTitulo{
+            grid-column-start:3;
+            grid-row-start:1;
+            grid-row-end:2;
+            padding-top: 19rem;
+            padding-bottom: 40px;
             text-align: center;
         }
-        .imgBitcoin{
-            height: 30rem;
-            background-color: transparent;
-            padding-left: 210px;
-            grid-area:img;
-            margin-top: 40px;
+        .PrecioCompra{
+            grid-column-start:3;
+            grid-row-start:2;
+            grid-row-end:3;
+            padding-top: 1rem;
+            text-align: center;
         }
-          .contenedorCotizaciones{
-            display: grid;
-            grid-template-areas: 
-            "img precio"
-            "footer footer"
-            ;
+        .PrecioVenta{
+            grid-column-start:3;
+            grid-row-start:3;
+            grid-row-end:4;
+            padding-top: 1rem;
+            text-align: center;
         }
-        .Precio{
-            grid-area:precio;
-            justify-content: right;
-            margin-top: 150px;
-            margin-left: 80px;
+        .PrecioOperacion{
+          text-align: center;
+          margin: 20px;
         }
+     
     }
+} 
+ 
+// Tamaño tablet (768-480) 
+@media all and (min-width: 480px) and (max-width: 992px) {
 
-    footer .footerCotizaciones{
-        grid-area:footer;
-        text-align: center;
-        margin-top: 30px;;
+  body{
+    display: block;
+  }  
+
+  div .contenedor{
+    display: grid;
+    grid-template-columns:auto; 
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas:  
+        "header"
+        "main"
+        "footer";
+    header .headerIndex{
+        grid-area: header
     }
- /* CSS wallet */
- main .mainWallet{
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 30% 10% 20% 20% ;
-            grid-template-areas:  
-            "h1 img"
-            "logo img"
-            "slogan img"
-            "texto img"
-            "comenza img"
-            "footer footer";
-            .tituloPrincipal{
-                grid-area:h1;
-                font-size:x-large;
-                text-align: left;
-                padding-top: 120px;
-                padding-left: 250px;
-            }
-            .comenza{
-                grid-area:comenza;
-            }
-            .imagenMonedas{
-                grid-area:logo;
-                height: 13rem;
-                background-color: transparent;
-                padding-left: 210px;
-            }
-            .sloganMarca{
-                grid-area:slogan;
-                padding-left: 250px;
-                padding-top: 125px;
-            }
-            .textoHome{
-                grid-area:texto;
-                padding-left: 250px;
-                padding-top: 40px;
-            }
-            .imagenWallet{
-                grid-area:img;
-                padding-left: 40px;
-            }
-            .footerDerecho {
-                grid-area: footer;
-                text-align: center;
-            }
-            .img{
-                height: 30em;
-                background-color: transparent;
+    main .mainIndex{
+        grid-area: main;
+    }   
+    footer .footerDerecho{
+        grid-area: footer;
+    }    
+ }
 
-            }
-        }
-            header .navbar-nav.navbar-center {
-                position:static;
-                left: 10%;
-                transform: translatex(20%);
-            }
-        
- /* CSS acceder */
-        
-main .contenedoMain{
-            display: grid;
-            grid-template-columns: 60% 30%;
-            grid-template-rows: 5% 10% 5% ;
-            grid-template-areas:  
-            "h1 img"
-            "form img"
-            "footer img";
-            .inicia{
-                grid-area:h1;
-                text-align:center;
-                padding-top: 50px;
-            }
-            .signupFrmAcceder{
-                grid-area:form;
-                align-items:flex-start;
-                padding: 100px
-            }
-            .imagenAcceder{
-                grid-area:img;
-                width: 600px;
-                height: 700px;
-                align-items: flex-end;
-            }
-            .footerDerecho {
-                grid-area: footer;
-                text-align: center;
-                padding-top: 20px;
-            }
-         }
+  header .menuIzquierda {
+          display: none;
+          .menuDerecha{
+              justify-content: center;
+          }
+  }
 
-         @media (max-width: 575.98px)and (orientation:portrait) {
-            
-            main .contenedoMain{
-                margin:10px;
-                padding: 30px;
-                text-decoration: none;
-                .menuIzquierda{
-                    display: none;
-                }
-                .inicia{
-                    display: block;
-                }
-                .imagenAcceder{
-                    display:none;
-                }
-                .contenedoMain{
-                    padding-top: 10px;
-                }
-                .signupFrmAcceder{
-                    padding:0;
-                    display: block;;
-                    justify-content: center;
-                }
-                .acceder{
-                    color:white;
-                    text-decoration: none;
-                }
-            }
-        }
-
-        @media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
-    
-            main .contenedoMain{
-                margin:10px;
-                padding: 30px;
-                text-decoration: none;
-                .menuIzquierda{
-                    display: none;
-                }
-                .inicia{
-                    display: block
-                }
-                .imagenAcceder{
-                    display:none;
-                }
-                .contenedoMain{
-                    padding-top: 10px;
-                }
-                .signupFrmAcceder{
-                    padding:0;
-                    display: block;;
-                    justify-content: center;
-                }
-                .acceder{
-                    color:white;
-                    text-decoration: none;
-                }
-        }
-    }
-    
- /* CSS registrate */
-
-main .contenedorRegistracion{
+  .contenedorCotizaciones{
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
+    justify-content:  center;
+    align-items: center;
     grid-template-areas:  
-    "h1 img"
-    "form img"
-    "footer img";
-    .tituloRegistracion1{
-        grid-area:h1;
-        text-align:center;
+    "Precio";
+    .imgBitcoin{
+      display: none;
+    }
+    .Precio{
+      font-size: x-large;
+      .PrecioTitulo{  
         padding-top: 50px;
+      
+      }
     }
-    .signupFrm{
-        grid-area:form;
-        align-items:center;
-        padding: 100px;
-    }
-    .imagenRegistrar{
+  }
+  footer .footerDerecho{
+    padding-top: 50px;
+
+  }
+}
+
+
+// Tamaño teléfonos (480-menos ) 
+@media all and (min-width: 100px) and (max-width: 480px) { 
+
+  body{
+    display: block;
+  }  
+
+  header .menuIzquierda {
+          display: none;
+        .menuDerecha{
+          justify-content: right;
+          justify-items: right;
+          align-items: right;
+          align-content: right;
+                }
+  }
+
+  .contenedorCotizaciones{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content:  center;
+    align-items: center;
+    grid-template-areas:  
+    "Precio";
+      .imgBitcoin{
+        display: none;
+      }
+      .Precio{
+        font-size: medium;
+        .PrecioTitulo{  
+          padding-top: 50px;
+        
+        }
+      }
+  }
+  
+  footer .footerDerecho{
+    padding-top: 50px;
+
+  }
+}
+
+// CSS WALLET 
+.mainWallet {
+  display: grid;
+  grid-template-columns: 15% 35% 50% ;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    " . bullet img . " ; 
+    .bullet {
+        grid-area: bullet;
+        grid-column-start:2;
+        ul{ 
+        padding-top: 150px;
+        align-items: left;
+        padding-bottom: 50px;
+        }
+      }
+    .imgWallet{
         grid-area:img;
-        width: 600px;
-        height: 700px;
-        align-items: flex-end;
+        grid-column-start:3;
+        img { 
+        padding-top: 130px;
+        align-items: right;
+        padding-left: 30px;
     }
-    .footerDerecho {
-        grid-area:footer;
-        text-align:center;
-        padding-top: 20px;
-    }
+    }  
+}  
+
+
+//Tamaño tablet (768-480) 
+@media all and (min-width: 480px) and (max-width: 992px) {
+
+  body{
+    display: block;
+  }  
+
+  .mainWallet {
+    display: grid;
+    grid-template-columns: 15% 35% 50% ;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      " . bullet img . " ; 
+      .bullet {
+          grid-area: bullet;
+          grid-column-start:2;
+          ul{ 
+          padding-top: 150px;
+          align-items: left;
+          padding-bottom: 50px;
+        }
+      }
+    footer .footerDerecho{
+    padding-top: 50px;
+
+    }  
+  }
 }
 
-@media (max-width: 575.98px)and (orientation:portrait) {
 
-    main .contenedorRegistracion{
-        margin:10px;
-        padding: 30px;
-        text-decoration: none;
-        .menuIzquierda{
-            display: none;
+
+// Tamaño teléfonos (480-menos ) 
+      @media all and (min-width: 100px) and (max-width: 480px) { 
+
+
+      }   
+  
+    // CSS Acceder
+
+    .contenedoMain {
+        display: grid;
+        grid-template-columns: 15% 30% 40%;
+        grid-template-rows: 20% 60%;
+        grid-template-areas: 
+        " . h1 img" 
+        " . form img";
+        .inicia {
+          grid-area: h1;
+          grid-column-start: 2;
+          grid-row-start: 1;
+          h1 {
+          text-align: center;
+          padding-top: 50px; }
         }
-        .imagenRegistrar{
-            display:none;
+        .signupFrmAcceder {
+          grid-area: form;
+          grid-column-start: 2;
+          grid-row-start: 2;
+          form{
+          align-items: flex-start;}
         }
-        .signupFrm{
-            text-align: auto;
+        .imagenAcceder {
+          grid-area: img;
+          grid-column-start: 3;
+          img { 
+          width: 700px;
+          height: 600px;
+          padding-left: 50px;
+           }
         }
-    }
 }
+      
 
-@media (min-width: 576px) and (max-width: 991.98px) and (orientation:landscape) {
-    
-    main .contenedorRegistracion{
-        margin:10px;
-        padding: 30px;
-        text-decoration: none;
-        .menuIzquierda{
-            display: none;
+        
+         
+// Tamaño tablet (768-480) 
+@media all and (min-width: 480px) and (max-width: 992px) {
+
+        body{
+          display: block;
+        }  
+        .imagenAcceder{
+          display:none;
         }
-        .imagenRegistrar{
-            display:none;
+        footer .footerDerecho{
+            padding-top: 50px; 
+        }
+}
+        
+
+// Tamaño teléfonos (480-menos ) //
+      @media all and (min-width: 100px) and (max-width: 480px) { 
+
+        .imagenAcceder{
+          display:none;
         }
 
-    } 
-}   
+        }
+
+    // CSS Registrate 
+
+    .contenedorRegistracion2 {
+        display: grid;
+        grid-template-columns: 15% 30% 40%;
+        grid-template-rows: 20% 60%;
+        grid-template-areas: 
+        " . titulo imgreg" 
+        " . formreg imgreg";
+        .tituloRegistracion1 {
+          grid-area: titulo;
+          grid-column-start: 2;
+          grid-row-start: 1;
+            h1 {
+            text-align: center;
+            padding-top: 50px; }
+        }
+        .signupFrm {
+            grid-area: formreg;
+            grid-column-start: 2;
+            grid-row-start: 2;
+            form{
+            padding-top: 110px;
+            }
+        }
+          .imagenRegistrar {
+            grid-area: imgreg;
+            grid-column-start: 3;
+            img { 
+            width: 700px;
+            height: 600px;
+            padding-left: 50px;
+             }
+          }
+      }
+
+      // Tamaño tablet (768-480) 
+      @media all and (min-width: 480px) and (max-width: 992px) {
+
+        body{
+          display: block;
+        }  
+
+        main .imagenRegistrar{
+          display:none;
+        }
+      
+        footer .footerDerecho{
+            padding-top: 50px;
+
+        }
+      }
+      
+      // Tamaño teléfonos (480-menos ) //
+      @media all and (min-width: 100px) and (max-width: 480px) { 
+
+        main .imagenRegistrar{
+          display:none;
+        }
+
+        }

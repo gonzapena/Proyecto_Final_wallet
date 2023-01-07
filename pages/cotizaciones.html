@@ -4,46 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizaciones</title>
+    <meta name="Author" lang="es" content="Gonzalo P" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="description" content="Wallet Digital para operar divisas y criptomenedas de manera segura y comoda" />
+    <meta name="copyright" content="Copyright © wallet.com" />
+    <meta name="robots" content="index, follow" />
+      <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
+    <!-- icono pestaña-->
+    <link rel="icon" href="../img/favicon.png" alt="Imagen Favicon">
+    <title>Cotizaciones</title>
 </head>
 <body>
-    <header class= "contenedor">
-        <nav>
-            <ul class="menuIzquierda"> 
-                <img class="menuFoto" src="../img/bitcoin_etiqueta1.png" alt="">
-                <li><a href="../index.html">Home</a></li> 
-                <li><a href="../pages/cotizaciones.html">Cotizaciones</a></li>
-                <li><a href="../pages/nuestrawallet.html">Nuestra Wallet</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul class="menuDerecha">
-                <li class= "acceder"><a href="../pages/acceder.html">Acceder</a></li>
-                <li class= "registrar"><a href="../pages/registracion.html">Registrate</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="contenedorCotizaciones">
-        <section>
-            <div>
-                <img class="imgBitcoin" src="../img/bitcoin.png" alt="">
-            </div>
-        </section>
-        <section class="Precio">
-            <div>
-                <h1>Cotizacion Moneda</h1>
-                <h2>Precio Compra</h2>
-                    <form>
+    <div class= "contenedor">     
+        <header class="headerIndex">
+            <nav>
+                <ul class="menuIzquierda"> 
+                    <a href="../index.html" art="menu foto">
+                        <img class="menuFoto" src="../img/bitcoin_etiqueta1.png" alt="Imagen Menu">
+                    </a>
+                    <li><a href="../index.html">Home</a></li> 
+                    <li><a href="../pages/cotizaciones.html">Cotizaciones</a></li>
+                    <li><a href="../pages/nuestrawallet.html">Nuestra Wallet</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul class="menuDerecha">
+                    <li class= "acceder"><a href="../pages/acceder.html">Acceder</a></li>
+                    <li class= "registrar"><a href="../pages/registracion.html">Registrate</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="contenedorCotizaciones">
+            <section class="imgBitcoin">
+                <div>
+                    <img src="../img/bitcoin.png" alt="Imagen Bitcoin">
+                </div>
+            </section>
+            <section class="Precio">
+                <div>
+                    <h1 class="PrecioTitulo">Cotizacion BTC Moneda</h1>
+                    <h2 class="PrecioCompra">Precio Compra</h2>
+                    <form class="PrecioOperacion">
                         <select name="Operacion">
-                            <option value=""></option>
+                            <option value="">13,500</option>
+                            <option value="">15,500</option>
                         </select>
                     </form>
-                <h2>Precio Venta</h2>
-                <h3>Numero de Precio</h3>
-            </div>
-        </section>
-    </main>
-    <footer class="footerCotizaciones">Todos los derechos reservados</footer>
+                    <h2 class="PrecioVenta">Precio Venta</h2>
+                    <form class="PrecioOperacion">
+                        <select name="Operacion">
+                            <option value="">13,500</option>
+                            <option value="">15,500</option>
+                        </select>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footerDerecho">
+                <div class="row">
+                    <div class="col-md-12 col-md-6 text-left ">
+                        <h3 class="text-muted lead">CONTACTO:</h3>
+                        <h3 class="text-muted">
+                        Avenida Cerro de Aguila 99<br>
+                        Comunidad de Madrid - Alcobendas<br>
+                        Teléfonos: 0800-123-4567.<br>
+                        </h3>
+                    </div>
+                    <div class="col-xs-12 col-md-6 text-right footerIzquierdo">
+                        <h6 class="text-muted lead">ENCUENTRANOS EN LAS REDES</h6>
+                        <div class="redes-footer">
+                            <a href="https://www.facebook.com/" target="_blank"><img src="../img/facebook-2.png" alt="Imagen Facebook"></a>
+                            <a href="https://instagram.com/" target="_blank"><img src="../img/intagram-2.png" alt="Imagen Instagram"></a>
+                            <a href="https://www.youtube.com/" target="_blank"><img src="../img/youtube-2.png" alt="Imagen Youtube"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row_2"> 
+                    <div class="col-md-12 text-right">
+                        <h3 class="text-muted small"> Thunder Wallet SRL. @2019.<br> Todos los derechos reservados.</h3>
+                    </div>
+                </div>
+                </div>
+            </div>  
+            </div>  
+        </footer>
+    </div>
 </body>
 </html>
